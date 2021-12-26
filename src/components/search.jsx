@@ -50,19 +50,22 @@ const Search = ({ loadCurrentLocation, showWeather }) => {
       />
       {results.map((result) => (
         <div locationKey={result.Key}>
-          <Link
+          {/* <Link
             // className="btn btn-dark btn-sm"                      
             to={{
               pathname: `/weather/${result.Key}`
             }}
             role="button"
             onClick={() => {loadCurrentLocation(result); showWeather(true)}}
-          >
+          > */}
             <Location 
               locationKey={result.Key} 
               locationData={result}
+              currentPage="search"
+              to={{ pathname: `/weather/${result.Key}` }}
+              onClick={() => {loadCurrentLocation(result); showWeather(true)}}
             />
-          </Link>
+          {/* </Link> */}
         </div>
       ))}
     </div>

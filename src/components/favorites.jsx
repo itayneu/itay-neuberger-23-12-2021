@@ -2,6 +2,7 @@ import React from "react";
 import CurrentWeatherJSON from "../redux/json/currentWeather.json";
 import Favorite from "./favorite";
 import CurrentWeather from "./currentWeather";
+import "./favorites.css"
 
 import { connect } from 'react-redux'
 

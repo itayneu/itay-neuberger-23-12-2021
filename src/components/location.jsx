@@ -1,42 +1,47 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux"
-import { addToFavorites, removeFromFavorites } from "../redux/Favorites/favorites-actions"
+import FavoritesButton from "./favoritesButton";
 import './location.css';
 
-const Location = ({ locationData, addToFavorites, removeFromFavorites }) => {
+const Location = ({ locationData, favorites, currentPage, onClick }) => {
+    const inFavorites = favorites.find(location => 
+        location.Key === locationData.Key ? true : false
+    );
+    
     return (
         <div class="location-container">
             <div className="center">
-                <h4>{locationData.LocalizedName}</h4>
-                <p>{locationData.AdministrativeArea.LocalizedName}, {locationData.Country.LocalizedName}</p>
+                <Link
+                    // className="btn btn-dark btn-sm"                      
+                    to={{
+                    pathname: `/home`
+                    }}
+                    role="button"
+                    onClick={onClick}
+                >
+                    <h4>{locationData.LocalizedName}</h4>
+                    <p>{locationData.AdministrativeArea.LocalizedName}, {locationData.Country.LocalizedName}</p>
+                </Link>
             </div>
             <div className="right">
-                <button
-                    id={locationData.Key}
-                    className="btn btn-sm"
-                    style={{ display:"inline-block" }}
-                    onClick={() => addToFavorites(locationData.Key)}
-                >
-                    Add Fav
-                </button>
-                <button
-                    id={locationData.Key}
-                    className="btn btn-sm"
-                    style={{ display:"inline-block" }}
-                    onClick={() => removeFromFavorites(locationData.Key)}
-                >
-                    Remove Fav
-                </button>
+                { currentPage !== "search" 
+                    ? <FavoritesButton 
+                        locationData={locationData} 
+                        inFavorites={inFavorites}
+                    /> 
+                    : <i class="fa fa-angle-right" ></i>
+                    
+                }
             </div>
         </div>  
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
     return {
-        addToFavorites: (locationKey) => dispatch(addToFavorites(locationKey)),
-        removeFromFavorites: (locationKey) => dispatch(removeFromFavorites(locationKey)),
+        favorites: state.favorite.favorites,
     };
 };
 
-export default connect(null, mapDispatchToProps)(Location);
+export default connect(mapStateToProps)(Location);

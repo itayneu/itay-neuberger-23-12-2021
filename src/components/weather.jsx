@@ -12,6 +12,7 @@ const Weather = ({ locationKey, locationData, dailyForecasts }) => {
             <Location 
                 locationKey={locationKey} 
                 locationData={locationData}
+                currentPage="weather"
             />
             <CurrentWeather locationKey = {locationKey} />
             <Forecast dailyForecasts={dailyForecasts} />

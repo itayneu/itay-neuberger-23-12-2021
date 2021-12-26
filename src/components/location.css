@@ -8,6 +8,7 @@
 }
 .center {
     flex: 4;
+    /* border: 3px solid green; */
 }
 .right {
     flex: 0.2;

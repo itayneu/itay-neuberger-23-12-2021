@@ -7,6 +7,7 @@ const SearchInput = ({ value, onChangeText }) => {
     input.addEventListener('input', onChangeText);
     return input.removeEventListener('input', onChangeText);
   }, []);
+  
   return (
     <div className="search-container" id="scrollable-dropdown-menu">
       <input
