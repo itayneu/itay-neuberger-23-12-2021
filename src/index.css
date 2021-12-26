@@ -40,3 +40,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+p,
+h4 {
+    margin-block-start: 0px;
+    margin-block-end: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h4 {
+    font-weight: 600;
+    color: black;
+}
+
+p {
+    color:orangered;
+}

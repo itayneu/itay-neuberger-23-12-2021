@@ -2,13 +2,14 @@ import React from "react";
 import { connect } from "react-redux"
 import { addToFavorites, removeFromFavorites } from "../redux/Favorites/favorites-actions"
 
+
 const FavoritesButton = ({ locationData, inFavorites, addToFavorites, removeFromFavorites }) => {
 
     const onClick = inFavorites 
     ? () => removeFromFavorites(locationData.Key)
     : () => addToFavorites(locationData.Key);
 
-    const buttonName = (inFavorites) ? "Remove Fav" : "Add Fav"
+    const buttonName = (inFavorites) ? <i class="fas fa-star"></i> : <i class="far fa-star"></i>
 
     return (
         <div>

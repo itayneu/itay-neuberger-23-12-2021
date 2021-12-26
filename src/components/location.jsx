@@ -28,7 +28,7 @@ const Location = ({ locationData, favorites, currentPage, onClick, to }) => {
                         locationData={locationData} 
                         inFavorites={inFavorites}
                     /> 
-                    : <i class="fa fa-angle-right" ></i>
+                    : <i class="fas fa-angle-right"></i>
                 }   
             </div>
         </div>  
