@@ -24,10 +24,10 @@ class Home extends Component {
     };
     
     async componentDidMount() {
-        // const currentWeather = await getCurrentWeather(this.state.locationKey, "UvF6RxI37mEfFRKTHdXBcd49yxB0lGUj");
+        // const currentWeather = await getCurrentWeather(this.state.locationKey, process.env.REACT_APP_API_KEY);
         const currentWeather = currentWeatherJSON;
 
-        // const forecast = await getFiveDayDailyForecast(this.state.locationKey, "UvF6RxI37mEfFRKTHdXBcd49yxB0lGUj");
+        // const forecast = await getFiveDayDailyForecast(this.state.locationKey, process.env.REACT_APP_API_KEY);
         const forecast = fiveDaysForecastJSON;
         const dailyForecasts = forecast.DailyForecasts;
         this.setState({ currentWeather, dailyForecasts });

@@ -9,10 +9,10 @@ import locationAutocompleteJSON from "../json/locationAutocomplete.json"
 
 const fetchData = async (query, cb) => {
     console.warn('fetching ' + query);
-    // const res = await getLocationAutocomplete(query, "UvF6RxI37mEfFRKTHdXBcd49yxB0lGUj");
-    const res = locationAutocompleteJSON;
-    // cb(res);
-    cb([]);
+    const res = await getLocationAutocomplete(query, process.env.REACT_APP_API_KEY);
+    // const res = locationAutocompleteJSON;
+    cb(res);
+    // cb([]);
 };
 
 const debouncedFetchData = debounce((query, cb) => {
