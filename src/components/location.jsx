@@ -1,30 +1,42 @@
 import React from "react";
+import { connect } from "react-redux"
+import { addToFavorites, removeFromFavorites } from "../redux/Favorites/favorites-actions"
 import './location.css';
 
-const Location = ({ locationKey, city, area, country }) => {
-
-    const handleClick = (e) => {
-        alert(e);
-    };
-
+const Location = ({ locationData, addToFavorites, removeFromFavorites }) => {
     return (
         <div class="location-container">
             <div className="center">
-                <h4>{city}</h4>
-                <p>{area}, {country}</p>
+                <h4>{locationData.LocalizedName}</h4>
+                <p>{locationData.AdministrativeArea.LocalizedName}, {locationData.Country.LocalizedName}</p>
             </div>
             <div className="right">
                 <button
-                    id={locationKey}
+                    id={locationData.Key}
                     className="btn btn-sm"
                     style={{ display:"inline-block" }}
-                    onClick={handleClick}
+                    onClick={() => addToFavorites(locationData.Key)}
                 >
-                    Fav
+                    Add Fav
+                </button>
+                <button
+                    id={locationData.Key}
+                    className="btn btn-sm"
+                    style={{ display:"inline-block" }}
+                    onClick={() => removeFromFavorites(locationData.Key)}
+                >
+                    Remove Fav
                 </button>
             </div>
         </div>  
     )
 }
 
-export default Location;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToFavorites: (locationKey) => dispatch(addToFavorites(locationKey)),
+        removeFromFavorites: (locationKey) => dispatch(removeFromFavorites(locationKey)),
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Location);

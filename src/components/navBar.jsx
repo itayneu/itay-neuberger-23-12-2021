@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import configuration from "../services/configuration.json";
 
 class NavBar extends Component { 
   render() {

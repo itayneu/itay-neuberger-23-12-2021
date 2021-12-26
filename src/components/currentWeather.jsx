@@ -23,7 +23,7 @@ const CurrentWeather = ({ currentWeather }) => {
   return (
     <div class="current-weather-container" style={{ marginTop: "2%" }}>
       {/* <div class="current-weather-inner-container"> */}
-        <div className="left">
+        <div class="left">
           <img src={weatherIconLink}/>
         </div>
         <div class="center">

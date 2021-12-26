@@ -1,29 +1,21 @@
 .forecast-container {
+  /* border: 3px solid blue; */
     margin: auto;
     width: 50%;
-    /* border: 3px solid blue; */
-    /* padding: 10px; */
-    /* text-align: center; */
     display: flex;
   }
   .forecast-inner-container {
-    margin: auto;
-    /* width: 50%; */
     /* border: 3px solid yellow; */
-    /* padding: 10px; */
+    margin: auto;
     text-align: center;
   }
   .thumbnail {
-    margin: auto;
-    /* width: 50%; */
     /* border: 3px solid gray; */
+    margin: auto;
     padding: 10px;
-    /* text-align: center; */
   }
   .caption {
-    margin: auto;
-    /* width: 50%; */
     /* border: 3px solid red; */
+    margin: auto;
     padding: 10px;
-    /* text-align: center; */
   }

@@ -1,9 +1,9 @@
 .container {
+    /* border: 3px solid blue; */
     display:block;
     padding: 10px;
     margin: auto;
     width: 50%;
-    /* border: 3px solid blue; */
 }
 p,
 h4 {

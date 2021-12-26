@@ -1,0 +1,32 @@
+[
+    {
+      "Version": 1,
+      "Key": "328328",
+      "Type": "City",
+      "Rank": 10,
+      "LocalizedName": "London",
+      "Country": {
+        "ID": "GB",
+        "LocalizedName": "United Kingdom"
+      },
+      "AdministrativeArea": {
+        "ID": "LND",
+        "LocalizedName": "London"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "22222222",
+      "Type": "City",
+      "Rank": 10,
+      "LocalizedName": "Raanana",
+      "Country": {
+        "ID": "IL",
+        "LocalizedName": "Israel Kingdom"
+      },
+      "AdministrativeArea": {
+        "ID": "TLV",
+        "LocalizedName": "Tel Aviv"
+      }
+    }
+  ]

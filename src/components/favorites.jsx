@@ -1,38 +1,37 @@
-import React, { Component } from "react";
-import NavBar from "./navBar";
-import { toast } from "react-toastify";
-import { getLocationAutocomplete, getCurrentWeather, getFiveDayDailyForecast } from "../services/apiConfiguration";
-import locationAutocompleteJSON from "../json/locationAutocomplete.json"
-import CurrentWeatherJSON from "../json/currentWeather.json";
-import Location from "./location";
+import React from "react";
+import CurrentWeatherJSON from "../redux/json/currentWeather.json";
+import Favorite from "./favorite";
 import CurrentWeather from "./currentWeather";
 
-const favorites = locationAutocompleteJSON;
+import { connect } from 'react-redux'
+
+// const favorites = locationAutocompleteJSON;
 const currentWeather = CurrentWeatherJSON
 
-class Favorites extends Component {
-    render() {
+const Favorites = ({ favorites }) => {
+    if (favorites) {
         return (
-            <React.Fragment>
-                <NavBar />
-                <div className="container">
-                    <div style={{marginLeft: "1.3%", marginTop: "10%"}}>
-                        {favorites.map((result, index) => (
-                            <div key={index}>
-                            <Location
-                                city={result.LocalizedName}
-                                area={result.AdministrativeArea.LocalizedName}
-                                country={result.Country.LocalizedName}
+            <div className="container">
+                <div style={{marginLeft: "1.3%", marginTop: "10%"}}>
+                    {favorites.map((favorite) => (
+                        <div locationKey={favorite.Key}>
+                            <Favorite 
+                                locationKey={favorite.Key} 
+                                locationData={favorite}
                             />
                             <CurrentWeather currentWeather = {currentWeather} />
-                            </div>
-                        ))}
-                        {/* <Forecast dailyForecasts={this.state.dailyForecasts} /> */}
-                    </div>
-                </div> 
-            </React.Fragment>
+                        </div>
+                    ))}
+                </div>
+            </div>
         );
-      }
-    }
+    } else return <h1>Favorites list is empty. Please add locations from home page.</h1>
+};
 
-export default Favorites;
+const mapStateToProps = (state) => {
+    return {
+        favorites: state.favorite.favorites,
+    };
+};
+
+export default connect(mapStateToProps)(Favorites);

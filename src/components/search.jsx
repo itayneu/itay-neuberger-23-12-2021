@@ -1,25 +1,27 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-// import './style.css';
 import { getLocationAutocomplete, getCurrentWeather, getFiveDayDailyForecast } from "../services/apiConfiguration";
 import Location from './location'
-import SearchInput from './debounce/searchInput';
+import SearchInput from './searchInput';
 import debounce from 'lodash.debounce';
-import locationAutocompleteJSON from "../json/locationAutocomplete.json"
+
+import { connect } from "react-redux";
+import { loadCurrentLocation, showWeather } from '../redux/Favorites/favorites-actions';
 
 const fetchData = async (query, cb) => {
     console.warn('fetching ' + query);
     const res = await getLocationAutocomplete(query, process.env.REACT_APP_API_KEY);
     // const res = locationAutocompleteJSON;
+    // const res = [];
     cb(res);
-    // cb([]);
 };
 
 const debouncedFetchData = debounce((query, cb) => {
   fetchData(query, cb);
 }, 500);
 
-function Search() {
+
+const Search = ({ loadCurrentLocation, showWeather }) => {
   const [query, setQuery] = React.useState('');
   const [results, setResults] = React.useState([]);
 
@@ -29,27 +31,49 @@ function Search() {
     });
   }, [query]);
 
-  
+  const onChangeHandler = (e) => {
+    setQuery(e.target.value);
+    let length = (e.target.value.length === 0) ? true : false;
+    showWeather(length);
+  };
+
+  const onClick = (result) => {
+    loadCurrentLocation(result);
+    showWeather(true);
+  };
 
   return (
     <div>
       <SearchInput
         value={query}
-        onChangeText={e => {
-          setQuery(e.target.value);
-        }}
+        onChangeText={ onChangeHandler}
       />
-      {results.map((result, index) => (
-        <div key={index}>
-          <Location
-            city={result.LocalizedName}
-            area={result.AdministrativeArea.LocalizedName}
-            country={result.Country.LocalizedName}
-          />
+      {results.map((result) => (
+        <div locationKey={result.Key}>
+          <Link
+            // className="btn btn-dark btn-sm"                      
+            to={{
+              pathname: `/weather/${result.Key}`
+            }}
+            role="button"
+            onClick={() => {loadCurrentLocation(result); showWeather(true)}}
+          >
+            <Location 
+              locationKey={result.Key} 
+              locationData={result}
+            />
+          </Link>
         </div>
       ))}
     </div>
   );
 }
 
-export default Search;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadCurrentLocation: (location) => dispatch(loadCurrentLocation(location)),
+    showWeather: (value) => dispatch(showWeather(value)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Search);
