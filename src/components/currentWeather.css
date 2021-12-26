@@ -1,0 +1,23 @@
+.current-weather-container {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid green; */
+    padding: 10px;
+    display: flex;
+    /* text-align: center; */
+    
+}
+.current-weather-inner-container {
+    /* border: 3px solid brown; */
+    display: flex;
+    padding: 10px;
+}
+.center {
+    flex: 4;
+}
+.left {
+    justify-content: center;
+}
+.right {
+    flex: 0.2;
+  }

@@ -1,0 +1,21 @@
+.container {
+    display:block;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid blue; */
+}
+p,
+h4 {
+    margin-block-start: 0px;
+    margin-block-end: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+p {
+    color:orangered;
+}
