@@ -17,7 +17,7 @@ const Forecast = ({ forecast }) => {
               </div>
               <div class="caption">
                 <h4>{weekdaysList[new Date(forecast.Date).getDay()]}</h4>
-                <p><b>{Math.round(forecast.Temperature.Maximum.Value)}&deg;</b> - {Math.round(forecast.Temperature.Minimum.Value)}&deg;</p>
+                <p><b>{Math.round(forecast.Temperature.Maximum.Value)}&deg;</b> / {Math.round(forecast.Temperature.Minimum.Value)}&deg;</p>
               </div>
             </div>
         ))}
