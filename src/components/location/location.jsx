@@ -1,8 +1,9 @@
 import './location.css';
 import React from 'react';
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import FavoritesButton from "./favoritesButton/favoritesButton";
+
 
 const Location = ({ favorites, currentWeather, locationData, currentPage, to, onClick }) => {
     const inFavorites = favorites.find(location => 
@@ -12,8 +13,7 @@ const Location = ({ favorites, currentWeather, locationData, currentPage, to, on
     return (
         <div class="location-container">
             <div className="center">
-                <Link
-                    // className="btn btn-dark btn-sm"                      
+                <Link                    
                     to={to}
                     role="button"
                     onClick={onClick}

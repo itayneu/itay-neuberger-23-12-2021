@@ -1,5 +1,5 @@
 import React from "react";
-import "./favoritesButton.css"
+import "./favoritesButton.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToFavorites, removeFromFavorites } from "../../../redux/Weather/weather-actions"

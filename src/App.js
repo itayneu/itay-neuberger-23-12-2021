@@ -4,6 +4,7 @@ import NavBar from "./components/navBar/navBar";
 import Favorites from "./components/favorites/favorites";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
+
 function App() {
   return (
     <Router>

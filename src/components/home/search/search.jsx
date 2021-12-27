@@ -1,29 +1,29 @@
 import './search.css';
-import React from 'react';
 import { connect } from "react-redux";
 import debounce from 'lodash.debounce';
+import React, { useEffect } from 'react';
 import Location from '../../location/location'
 import SearchInput from './searchInput/searchInput';
 import { getLocationAutocomplete } from "../../../services/apiConfiguration";
 import { loadCurrentLocation, showWeather } from '../../../redux/Weather/weather-actions';
 
 
-const fetchData = async (query, cb) => {
+const fetchLocations = async (query, cb) => {
     const res = await getLocationAutocomplete(query, process.env.REACT_APP_API_KEY);
     cb(res);
 };
 
-const debouncedFetchData = debounce((query, cb) => {
-  fetchData(query, cb);
+const debouncedFetchLocations = debounce((query, cb) => {
+  fetchLocations(query, cb);
 }, 500);
 
 const Search = ({ loadCurrentLocation, showWeather }) => {
   const [query, setQuery] = React.useState('');
-  const [location, setLocation] = React.useState([]);
+  const [locations, setLocations] = React.useState([]);
 
-  React.useEffect(() => {
-    debouncedFetchData(query, res => {
-      setLocation(res);
+  useEffect(() => {
+    debouncedFetchLocations(query, res => {
+      setLocations(res);
     });
   }, [query]);
 
@@ -41,13 +41,13 @@ const Search = ({ loadCurrentLocation, showWeather }) => {
       <div className="table-container">
         <table className="table">
           <tbody>
-            {location.map((result) => (
-              <tr key={result.Key}>
+            {locations.map((location) => (
+              <tr key={location.Key}>
                 <Location 
-                  locationData={result}
+                  locationData={location}
                   currentPage="search"
-                  to={{ pathname: `/weather/${result.Key}` }}
-                  onClick={() => {loadCurrentLocation(result); showWeather(true)}}
+                  to={{ pathname: `/weather/${location.Key}` }}
+                  onClick={() => {loadCurrentLocation(location); showWeather(true)}}
                 />
               </tr>
             ))}

@@ -10,7 +10,7 @@ export async function getLocationAutocomplete(query, apikey) {
       );
       return response.data;
     } catch (error) {
-      toast.warn("Could not find locations. please try again");
+      toast.error("Could not find locations. please try again");
     }
   } else {
     return [];
@@ -25,7 +25,7 @@ export async function getCurrentWeather(locationKey, apikey) {
     );
     return response.data;
   } catch (error) {
-    toast.warn("Could not find current weather. please try again");
+    toast.error("Could not find current weather. please try again");
   }
 }
 
@@ -36,6 +36,6 @@ export async function getFiveDayDailyForecast(locationKey, apikey) {
     );
     return response.data;
   } catch (error) {
-    toast.warn("Could not find forecast. please try again");
+    toast.error("Could not find forecast. please try again");
   }
 }

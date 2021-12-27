@@ -1,12 +1,12 @@
 import './weather.css';
-import React from "react";
 import { connect } from "react-redux";
 import debounce from 'lodash.debounce';
+import React, { useEffect } from 'react';
 import Location from "../../location/location";
 import Forecast from "../weather/forecast/forecast";
 import CurrentWeather from "../../currentWeather/currentWeather";
-import { getCurrentWeather, getFiveDayDailyForecast } from "../../../services/apiConfiguration"
-import { loadCurrentWeather, loadCurrentForecast } from "../../../redux/Weather/weather-actions"
+import { getCurrentWeather, getFiveDayDailyForecast } from "../../../services/apiConfiguration";
+import { loadCurrentWeather, loadCurrentForecast } from "../../../redux/Weather/weather-actions";
 
 
 const fetchWeather = async (location, cb) => {
@@ -32,7 +32,7 @@ const Weather = ({ locationData, loadCurrentWeather, loadCurrentForecast }) => {
     const [weather, setWeather] = React.useState();
     const [forecast, setForecast] = React.useState([]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         debouncedFetchWeather(locationData.Key, res => {
             setWeather(res);
         });

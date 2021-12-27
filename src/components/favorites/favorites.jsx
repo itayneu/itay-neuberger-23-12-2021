@@ -1,6 +1,6 @@
 import React from "react";
+import { connect } from 'react-redux';
 import Favorite from "./favorite/favorite";
-import { connect } from 'react-redux'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
