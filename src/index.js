@@ -12,10 +12,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import "mdbreact/dist/css/mdb.css";
 import "font-awesome/css/font-awesome.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 const persistedState = loadState();
-const store = createStore(rootReducer, persistedState);
+const store = createStore(rootReducer, persistedState, composeWithDevTools());
 
 store.subscribe(throttle(() => {
   saveState(store.getState());

@@ -16,7 +16,7 @@ const CurrentWeather = ({ weather }) => {
   return (
     <div class="current-weather-container" style={{ marginTop: "2%" }}>
       <div class="left">
-        <img src={weatherIconLink} alt="..."/>
+        <img src={weatherIconLink}/>
       </div>
       <div class="center">
         <h1>{temperature}</h1>
