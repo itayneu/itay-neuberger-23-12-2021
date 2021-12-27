@@ -16,17 +16,32 @@
     },
     {
       "Version": 1,
-      "Key": "22222222",
+      "Key": "308526",
       "Type": "City",
       "Rank": 10,
-      "LocalizedName": "Raanana",
+      "LocalizedName": "Madrid",
       "Country": {
-        "ID": "IL",
-        "LocalizedName": "Israel Kingdom"
+        "ID": "Madrid",
+        "LocalizedName": "Spain"
       },
       "AdministrativeArea": {
-        "ID": "TLV",
-        "LocalizedName": "Tel Aviv"
+        "ID": "MD",
+        "LocalizedName": "Madrid"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "623",
+      "Type": "City",
+      "Rank": 20,
+      "LocalizedName": "Paris",
+      "Country": {
+        "ID": "FR",
+        "LocalizedName": "France"
+      },
+      "AdministrativeArea": {
+        "ID": "75",
+        "LocalizedName": "Ville de Paris"
       }
     }
   ]

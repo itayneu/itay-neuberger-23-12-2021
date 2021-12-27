@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import FavoritesButton from "./favoritesButton";
 import './location.css';
 
-const Location = ({ locationData, favorites, currentPage, onClick, to }) => {
+const Location = ({ favorites, locationData, currentPage, to, onClick }) => {
     const inFavorites = favorites.find(location => 
         location.Key === locationData.Key ? true : false
     );

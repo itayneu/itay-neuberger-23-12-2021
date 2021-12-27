@@ -5,17 +5,13 @@ import './home.css';
 
 import { connect } from 'react-redux'
 
-const Home = ({ currentLocation, currentWeather, currentForecast, showWeather }) => {
+const Home = ({ currentLocation, showWeather }) => {
     return (
         <div class="container">
             <div style={{marginLeft: "1.3%", marginTop: "10%"}}>
                 <Search />
                 { showWeather 
-                    ? <Weather
-                            locationKey={currentLocation.Key} 
-                            locationData={currentLocation}
-                            dailyForecasts={currentForecast}
-                        /> 
+                    ? <Weather locationData={currentLocation} /> 
                     : null 
                 }
             </div>
@@ -26,8 +22,6 @@ const Home = ({ currentLocation, currentWeather, currentForecast, showWeather })
 const mapStateToProps = (state) => {
     return {
         currentLocation: state.favorite.currentLocation,
-        currentWeather: state.favorite.currentWeather,
-        currentForecast: state.favorite.currentForecast,
         showWeather: state.favorite.showWeather,
     };
 };

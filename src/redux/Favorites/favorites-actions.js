@@ -1,10 +1,11 @@
 import * as actionTypes from "./favorites-types";
 
-export const addToFavorites = (locationKey) => {
+export const addToFavorites = (locationKey, weather) => {
     return {
         type: actionTypes.ADD_TO_FAVORITES,
         payload: {
-           locationKey: locationKey 
+           locationKey: locationKey,
+           weather, 
         }
     };
 };

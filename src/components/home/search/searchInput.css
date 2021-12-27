@@ -1,7 +1,7 @@
 .search-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 64px;
+    margin-bottom: 16px;
   }
   
   .search-container input {

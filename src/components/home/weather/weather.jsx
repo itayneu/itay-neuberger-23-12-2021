@@ -2,18 +2,18 @@ import React from "react";
 import CurrentWeather from "../../currentWeather/currentWeather";
 import Forecast from "../../forecast/forecast";
 import Location from "../../location/location";
+import './weather.css';
 
 
-const Weather = ({ locationKey, locationData }) => { 
+const Weather = ({ locationData }) => { 
     return (
-        <div>
+        <div className="weather-container">
             <Location 
-                locationKey={locationKey} 
                 locationData={locationData}
                 currentPage="weather"
             />
-            <CurrentWeather locationKey={locationKey} />
-            <Forecast locationKey={locationKey} />
+            <CurrentWeather locationKey={locationData.Key} />
+            <Forecast locationKey={locationData.Key} />
         </div> 
     );
 };

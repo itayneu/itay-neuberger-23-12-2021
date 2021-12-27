@@ -1,20 +1,23 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Location from "../location/location";
+import './favorite.css';
 
 import { connect } from 'react-redux';
 import { loadCurrentLocation } from '../../redux/Favorites/favorites-actions';
+import CurrentWeather2 from '../currentWeather/currentWeather2';
 
-const Favorite = ({ loadCurrentLocation, locationKey, locationData }) => {
+const Favorite = ({ locationData, loadCurrentLocation }) => {
     return (
-        <div>
+        <div className="favorite-container">
             <Location 
-                locationKey={locationKey} 
                 locationData={locationData}
                 currentPage="favorite"
                 to={{ pathname: "/home" }}
                 onClick={() => loadCurrentLocation(locationData)}
             />
+            
+            <CurrentWeather2 weather={locationData.Weather} />
         </div>
     );
 }

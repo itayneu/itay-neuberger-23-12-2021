@@ -1,9 +1,10 @@
 .location-container {
     /* border: 3px solid green; */
     margin: auto;
-    width: 50%;
+    /* width: 50%; */
     padding: 10px;
     display: flex;
+    /* border-top: 1px solid orangered; */
     border-bottom: 1px solid orangered;
 }
 .center {

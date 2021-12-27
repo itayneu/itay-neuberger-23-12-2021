@@ -6,8 +6,8 @@ import { getCurrentWeather, getFiveDayDailyForecast } from "../../services/apiCo
 
 const fetchForecast = async (location, cb) => {
   console.warn('fetching forecast at ' + location);
-  // const res = await getFiveDayDailyForecast(location, process.env.REACT_APP_API_KEY);
-  const res = fiveDaysJSON;
+  const res = await getFiveDayDailyForecast(location, process.env.REACT_APP_API_KEY);
+  // const res = fiveDaysJSON;
   // const res = [];
   const dailyForecasts = res.DailyForecasts;
   cb(dailyForecasts);
