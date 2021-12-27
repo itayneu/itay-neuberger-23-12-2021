@@ -2,13 +2,24 @@ import "./index.css";
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
-import store from "./redux/store";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
+import throttle from 'lodash/throttle';
+import rootReducer from './redux/rootReducer';
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "mdbreact/dist/css/mdb.css";
 import "font-awesome/css/font-awesome.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { loadState, saveState } from "./localStorage"
+
+
+const persistedState = loadState();
+const store = createStore(rootReducer, persistedState);
+
+store.subscribe(throttle(() => {
+  saveState(store.getState());
+}, 1000));
 
 ReactDOM.render(
   <React.StrictMode>
