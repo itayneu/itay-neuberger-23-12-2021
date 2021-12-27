@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux"
-import { addToFavorites, removeFromFavorites } from "../redux/Favorites/favorites-actions"
+import { addToFavorites, removeFromFavorites } from "../../redux/Favorites/favorites-actions"
 
 
 const FavoritesButton = ({ locationData, inFavorites, addToFavorites, removeFromFavorites }) => {

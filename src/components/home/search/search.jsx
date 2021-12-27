@@ -1,25 +1,25 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { getLocationAutocomplete, getCurrentWeather, getFiveDayDailyForecast } from "../services/apiConfiguration";
-import Location from './location'
+import { getLocationAutocomplete, getCurrentWeather, getFiveDayDailyForecast } from "../../../services/apiConfiguration";
+import Location from '../../location/location'
 import SearchInput from './searchInput';
 import debounce from 'lodash.debounce';
+import locationAutocompleteJSON from "../../../redux/json/locationAutocomplete.json"
 
 import { connect } from "react-redux";
-import { loadCurrentLocation, showWeather } from '../redux/Favorites/favorites-actions';
+import { loadCurrentLocation, showWeather } from '../../../redux/Favorites/favorites-actions';
 
 const fetchData = async (query, cb) => {
     console.warn('fetching ' + query);
-    const res = await getLocationAutocomplete(query, process.env.REACT_APP_API_KEY);
+    // const res = await getLocationAutocomplete(query, process.env.REACT_APP_API_KEY);
     // const res = locationAutocompleteJSON;
-    // const res = [];
+    const res = [];
     cb(res);
 };
 
 const debouncedFetchData = debounce((query, cb) => {
   fetchData(query, cb);
 }, 500);
-
 
 const Search = ({ loadCurrentLocation, showWeather }) => {
   const [query, setQuery] = React.useState('');
@@ -37,16 +37,11 @@ const Search = ({ loadCurrentLocation, showWeather }) => {
     showWeather(length);
   };
 
-  const onClick = (result) => {
-    loadCurrentLocation(result);
-    showWeather(true);
-  };
-
   return (
     <div>
       <SearchInput
         value={query}
-        onChangeText={ onChangeHandler}
+        onChangeText={onChangeHandler}
       />
       {results.map((result) => (
         <div locationKey={result.Key}>

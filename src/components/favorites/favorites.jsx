@@ -1,7 +1,7 @@
 import React from "react";
-import CurrentWeatherJSON from "../redux/json/currentWeather.json";
+import CurrentWeatherJSON from "../../redux/json/currentWeather.json";
 import Favorite from "./favorite";
-import CurrentWeather from "./currentWeather";
+import CurrentWeather from "../currentWeather/currentWeather";
 
 import { connect } from 'react-redux'
 
@@ -19,7 +19,7 @@ const Favorites = ({ favorites }) => {
                                 locationKey={favorite.Key} 
                                 locationData={favorite}
                             />
-                            <CurrentWeather currentWeather = {currentWeather} />
+                            <CurrentWeather locationKey={favorite.Key} />
                         </div>
                     ))}
                 </div>

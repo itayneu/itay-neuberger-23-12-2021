@@ -1,6 +1,6 @@
 import React from "react";
-import Search from "./search";
-import Weather from "./weather";
+import Search from "./search/search";
+import Weather from "./weather/weather";
 import './home.css';
 
 import { connect } from 'react-redux'

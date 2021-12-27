@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Location from "./location";
+import Location from "../location/location";
 
 import { connect } from 'react-redux';
-import { loadCurrentLocation } from '../redux/Favorites/favorites-actions';
+import { loadCurrentLocation } from '../../redux/Favorites/favorites-actions';
 
 const Favorite = ({ loadCurrentLocation, locationKey, locationData }) => {
     return (
