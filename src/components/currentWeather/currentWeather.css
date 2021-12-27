@@ -1,13 +1,10 @@
 .current-weather-container {
-    /* border: 3px solid green; */
     margin: auto;
-    /* width: 50%; */
     padding: 10px;
     display: flex;
     
 }
 .current-weather-inner-container {
-    /* border: 3px solid brown; */
     display: flex;
     padding: 10px;
 }

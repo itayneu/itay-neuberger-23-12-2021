@@ -11,7 +11,7 @@ const SearchInput = ({ value, onChangeText }) => {
   return (
     <div className="search-container" id="scrollable-dropdown-menu">
       <input
-        class="typeahead"
+        className="typeahead"
         type="text"
         value={value}
         onChange={onChangeText}

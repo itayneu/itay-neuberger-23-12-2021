@@ -1,0 +1,7 @@
+.button-container {
+    margin:auto;
+    padding: 10px;
+    display: flex;
+}
+
+*.icon-color {color: orangered}

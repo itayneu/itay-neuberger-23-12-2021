@@ -1,11 +1,10 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import Location from "../location/location";
 import './favorite.css';
-
+import React from 'react';
 import { connect } from 'react-redux';
-import { loadCurrentLocation } from '../../redux/Favorites/favorites-actions';
-import CurrentWeather2 from '../currentWeather/currentWeather2';
+import Location from "../../location/location";
+import CurrentWeather from '../../currentWeather/currentWeather';
+import { loadCurrentLocation } from '../../../redux/Weather/weather-actions';
+
 
 const Favorite = ({ locationData, loadCurrentLocation }) => {
     return (
@@ -16,8 +15,7 @@ const Favorite = ({ locationData, loadCurrentLocation }) => {
                 to={{ pathname: "/home" }}
                 onClick={() => loadCurrentLocation(locationData)}
             />
-            
-            <CurrentWeather2 weather={locationData.Weather} />
+            <CurrentWeather weather={locationData.Weather} />
         </div>
     );
 }

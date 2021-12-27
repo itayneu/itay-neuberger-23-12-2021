@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import { connect } from "react-redux"
-import FavoritesButton from "./favoritesButton";
 import './location.css';
+import React from 'react';
+import { connect } from "react-redux"
+import { Link } from "react-router-dom";
+import FavoritesButton from "./favoritesButton/favoritesButton";
 
-const Location = ({ favorites, locationData, currentPage, to, onClick }) => {
+const Location = ({ favorites, currentWeather, locationData, currentPage, to, onClick }) => {
     const inFavorites = favorites.find(location => 
         location.Key === locationData.Key ? true : false
     );
@@ -26,6 +26,7 @@ const Location = ({ favorites, locationData, currentPage, to, onClick }) => {
                 { currentPage !== "search" 
                     ? <FavoritesButton 
                         locationData={locationData} 
+                        currentWeather={currentWeather}
                         inFavorites={inFavorites}
                     /> 
                     : <i class="fas fa-angle-right"></i>
@@ -37,7 +38,8 @@ const Location = ({ favorites, locationData, currentPage, to, onClick }) => {
 
 const mapStateToProps = (state) => {
     return {
-        favorites: state.favorite.favorites,
+        favorites: state.weather.favorites,
+        currentWeather: state.weather.currentWeather,
     };
 };
 

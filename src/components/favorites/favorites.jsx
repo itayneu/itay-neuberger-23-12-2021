@@ -1,9 +1,8 @@
 import React from "react";
-import Favorite from "./favorite";
-import CurrentWeather from "../currentWeather/currentWeather";
-import './favorites.css';
-
+import Favorite from "./favorite/favorite";
 import { connect } from 'react-redux'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 const Favorites = ({ favorites }) => {
@@ -11,20 +10,20 @@ const Favorites = ({ favorites }) => {
         return (
             <div className="container">
                 <div style={{marginLeft: "1.3%", marginTop: "10%"}}>
+                    <ToastContainer />
                     {favorites.map((favorite) => (
-                        // alert(favorite.LocalizedName),
                         <div key={favorite.Key}>
                             <Favorite locationData={favorite} />,
-                            {/* {(favorite.Key === "623") ? null : <CurrentWeather locationKey={favorite.Key} />} */}
                         </div>
                     ))}
                 </div>
             </div>
         );
-    } else {//alert("cool");//return (<div className="container"><h1>Favorites list is empty. Please add locations from home page.</h1></div>);
+    } else {
         return (
             <div className="container">
                 <div style={{marginLeft: "1.3%", marginTop: "10%", textAlign:"center"}}>
+                    <ToastContainer />
                     <h4>Favorites list is empty</h4>
                 </div>
             </div>
@@ -34,7 +33,7 @@ const Favorites = ({ favorites }) => {
 
 const mapStateToProps = (state) => {
     return {
-        favorites: state.favorite.favorites,
+        favorites: state.weather.favorites,
     };
 };
 

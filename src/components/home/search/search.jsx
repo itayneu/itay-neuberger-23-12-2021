@@ -1,20 +1,15 @@
-import React from 'react';
-import { getLocationAutocomplete } from "../../../services/apiConfiguration";
-import Location from '../../location/location'
-import SearchInput from './searchInput';
-import debounce from 'lodash.debounce';
-import locationJSON from "../../../redux/json/locationAutocomplete.json"
 import './search.css';
-
+import React from 'react';
 import { connect } from "react-redux";
-import { loadCurrentLocation, showWeather } from '../../../redux/Favorites/favorites-actions';
+import debounce from 'lodash.debounce';
+import Location from '../../location/location'
+import SearchInput from './searchInput/searchInput';
+import { getLocationAutocomplete } from "../../../services/apiConfiguration";
+import { loadCurrentLocation, showWeather } from '../../../redux/Weather/weather-actions';
 
 
 const fetchData = async (query, cb) => {
-    console.warn('fetching ' + query);
     const res = await getLocationAutocomplete(query, process.env.REACT_APP_API_KEY);
-    // const res = locationJSON; 
-    // const res = [];
     cb(res);
 };
 
@@ -22,14 +17,13 @@ const debouncedFetchData = debounce((query, cb) => {
   fetchData(query, cb);
 }, 500);
 
-
 const Search = ({ loadCurrentLocation, showWeather }) => {
   const [query, setQuery] = React.useState('');
-  const [results, setResults] = React.useState([]);
+  const [location, setLocation] = React.useState([]);
 
   React.useEffect(() => {
     debouncedFetchData(query, res => {
-      setResults(res);
+      setLocation(res);
     });
   }, [query]);
 
@@ -47,16 +41,14 @@ const Search = ({ loadCurrentLocation, showWeather }) => {
       <div className="table-container">
         <table className="table">
           <tbody>
-            {results.map((result) => (
-              <tr>
-                {/* <div className="container" style={{ display: "inline-block" }}> */}
-                  <Location 
-                    locationData={result}
-                    currentPage="search"
-                    to={{ pathname: `/weather/${result.Key}` }}
-                    onClick={() => {loadCurrentLocation(result); showWeather(true)}}
-                  />
-                {/* </div> */}
+            {location.map((result) => (
+              <tr key={result.Key}>
+                <Location 
+                  locationData={result}
+                  currentPage="search"
+                  to={{ pathname: `/weather/${result.Key}` }}
+                  onClick={() => {loadCurrentLocation(result); showWeather(true)}}
+                />
               </tr>
             ))}
           </tbody>

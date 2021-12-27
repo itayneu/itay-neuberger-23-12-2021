@@ -1,19 +1,16 @@
-import * as actionTypes from "./favorites-types"
-import locationAutocompleteJSON from "../json/locationAutocomplete.json"
-import locationAutocompleteJSON2 from "../json/locationAutocomplete2.json"
+import * as actionTypes from "./weather-types"
 import defaultLocationJSON from "../json/defaultLocation.json"
-import currentWeatherJSON from "../json/currentWeather.json"
-import fiveDaysForecastJSON from "../json/5daysForecast.json"
+
 
 const INITIAL_STATE = {
     favorites: [], 
     currentLocation: defaultLocationJSON,
-    currentWeather: currentWeatherJSON,
-    currentForecast: fiveDaysForecastJSON.DailyForecasts,
+    currentWeather: "",
+    currentForecast: [],
     showWeather: true
 }
 
-const favoriteReducer = (state = INITIAL_STATE, action)  => {
+const weatherReducer = (state = INITIAL_STATE, action)  => {
     switch(action.type) {
         case actionTypes.ADD_TO_FAVORITES:
             const currentLocation = state.currentLocation;
@@ -54,4 +51,4 @@ const favoriteReducer = (state = INITIAL_STATE, action)  => {
     }
 };
 
-export default favoriteReducer;
+export default weatherReducer;

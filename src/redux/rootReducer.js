@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
+import weatherReducer from "./Weather/weather-reducer"
 
-import favoriteReducer from "./Favorites/favorites-reducer"
 
 const rootReducer = combineReducers({
-    favorite: favoriteReducer,
+    weather: weatherReducer,
 });
 
 export default rootReducer;

@@ -1,6 +1,9 @@
-import * as actionTypes from "./favorites-types";
+import { toast } from "react-toastify";
+import * as actionTypes from "./weather-types";
 
-export const addToFavorites = (locationKey, weather) => {
+
+export const addToFavorites = (locationKey, locationData, weather) => {
+    toast(`${locationData.LocalizedName} added to favorites`);
     return {
         type: actionTypes.ADD_TO_FAVORITES,
         payload: {
@@ -10,7 +13,8 @@ export const addToFavorites = (locationKey, weather) => {
     };
 };
 
-export const removeFromFavorites = (locationKey) => {
+export const removeFromFavorites = (locationKey, locationData) => {
+    toast(`${locationData.LocalizedName} removed from favorites`);
     return {
         type: actionTypes.REMOVE_FROM_FAVORITES,
         payload: {

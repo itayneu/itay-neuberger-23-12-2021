@@ -1,5 +1,5 @@
-import { toast } from "react-toastify";
 import http from "./httpService";
+import { toast } from "react-toastify";
 
 
 export async function getLocationAutocomplete(query, apikey) {
@@ -25,7 +25,7 @@ export async function getCurrentWeather(locationKey, apikey) {
     );
     return response.data;
   } catch (error) {
-    console.log(error);
+    toast.warn("Could not find current weather. please try again");
   }
 }
 
@@ -36,6 +36,6 @@ export async function getFiveDayDailyForecast(locationKey, apikey) {
     );
     return response.data;
   } catch (error) {
-    console.log(error);
+    toast.warn("Could not find forecast. please try again");
   }
 }

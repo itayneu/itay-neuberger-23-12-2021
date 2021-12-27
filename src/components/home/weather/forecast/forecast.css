@@ -1,21 +1,16 @@
 .forecast-container {
-  /* border: 3px solid blue; */
     margin: auto;
-    /* width: 50%; */
     display: flex;
   }
   .forecast-inner-container {
-    /* border: 3px solid yellow; */
     margin: auto;
     text-align: center;
   }
   .thumbnail {
-    /* border: 3px solid gray; */
     margin: auto;
     padding: 10px;
   }
   .caption {
-    /* border: 3px solid red; */
     margin: auto;
     padding: 10px;
   }
