@@ -5,7 +5,7 @@ import defaultLocationJSON from "../json/defaultLocation.json"
 const INITIAL_STATE = {
     favorites: [], 
     currentLocation: defaultLocationJSON,
-    currentWeather: "",
+    currentWeather: [],
     currentForecast: [],
     showWeather: true
 }

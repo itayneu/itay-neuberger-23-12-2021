@@ -16,11 +16,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 const persistedState = loadState();
-const store = createStore(rootReducer, persistedState, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools());//, persistedState);
 
-store.subscribe(throttle(() => {
-  saveState(store.getState());
-}, 1000));
+// store.subscribe(throttle(() => {
+//   saveState(store.getState());
+// }, 1000));
 
 ReactDOM.render(
   <React.StrictMode>
