@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/itay-neuberger-23-12-2021/static/css/main.4064d620.css",
+    "main.js": "/itay-neuberger-23-12-2021/static/js/main.763a4bf3.js",
+    "static/media/fa-solid-900.svg": "/itay-neuberger-23-12-2021/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
+    "static/media/fa-brands-400.svg": "/itay-neuberger-23-12-2021/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/itay-neuberger-23-12-2021/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fa-solid-900.eot": "/itay-neuberger-23-12-2021/static/media/fa-solid-900.9bbb245e67a133f6e486.eot",
+    "static/media/fa-solid-900.ttf": "/itay-neuberger-23-12-2021/static/media/fa-solid-900.be9ee23c0c6390141475.ttf",
+    "static/media/fontawesome-webfont.eot": "/itay-neuberger-23-12-2021/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/itay-neuberger-23-12-2021/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fa-regular-400.svg": "/itay-neuberger-23-12-2021/static/media/fa-regular-400.4689f52cc96215721344.svg",
+    "static/media/fa-brands-400.eot": "/itay-neuberger-23-12-2021/static/media/fa-brands-400.23f19bb08961f37aaf69.eot",
+    "static/media/fa-brands-400.ttf": "/itay-neuberger-23-12-2021/static/media/fa-brands-400.527940b104eb2ea366c8.ttf",
+    "static/media/bg.jpg": "/itay-neuberger-23-12-2021/static/media/bg.85545cc4b698654ace45.jpg",
+    "static/media/fa-solid-900.woff": "/itay-neuberger-23-12-2021/static/media/fa-solid-900.eeccf4f66002c6f2ba24.woff",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/itay-neuberger-23-12-2021/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fa-brands-400.woff": "/itay-neuberger-23-12-2021/static/media/fa-brands-400.2285773e6b4b172f07d9.woff",
+    "static/media/fa-solid-900.woff2": "/itay-neuberger-23-12-2021/static/media/fa-solid-900.1551f4f60c37af51121f.woff2",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/itay-neuberger-23-12-2021/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/fa-brands-400.woff2": "/itay-neuberger-23-12-2021/static/media/fa-brands-400.d878b0a6a1144760244f.woff2",
+    "static/media/fa-regular-400.eot": "/itay-neuberger-23-12-2021/static/media/fa-regular-400.77206a6bb316fa0aded5.eot",
+    "static/media/fa-regular-400.ttf": "/itay-neuberger-23-12-2021/static/media/fa-regular-400.491974d108fe4002b2aa.ttf",
+    "static/media/fa-regular-400.woff": "/itay-neuberger-23-12-2021/static/media/fa-regular-400.bb58e57c48a3e911f15f.woff",
+    "static/media/fa-regular-400.woff2": "/itay-neuberger-23-12-2021/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
+    "index.html": "/itay-neuberger-23-12-2021/index.html",
+    "static/media/arrow_left.svg": "/itay-neuberger-23-12-2021/static/media/arrow_left.2b063d13b9ef574cd7d1.svg",
+    "static/media/arrow_right.svg": "/itay-neuberger-23-12-2021/static/media/arrow_right.0897f985cc5c7537b31d.svg",
+    "main.4064d620.css.map": "/itay-neuberger-23-12-2021/static/css/main.4064d620.css.map",
+    "main.763a4bf3.js.map": "/itay-neuberger-23-12-2021/static/js/main.763a4bf3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4064d620.css",
+    "static/js/main.763a4bf3.js"
+  ]
+}
