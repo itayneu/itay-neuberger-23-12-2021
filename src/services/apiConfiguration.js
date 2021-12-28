@@ -1,11 +1,11 @@
-import http from "./httpService";
+import https from "./httpsService";
 import { toast } from "react-toastify";
 
 
 export async function getLocationAutocomplete(query, apikey) {
   if (query && query.length > 0) {
     try {
-      const response = await http.get(
+      const response = await https.get(
         `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?q=${query}&apikey=${apikey}`
       );
       return response.data;
@@ -20,7 +20,7 @@ export async function getLocationAutocomplete(query, apikey) {
 
 export async function getCurrentWeather(locationKey, apikey) {
   try {
-    const response = await http.get(
+    const response = await https.get(
       `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apikey}`
     );
     return response.data;
@@ -31,7 +31,7 @@ export async function getCurrentWeather(locationKey, apikey) {
 
 export async function getFiveDayDailyForecast(locationKey, apikey) {
   try {
-    const response = await http.get(
+    const response = await https.get(
       `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?metric=true&apikey=${apikey}`
     );
     return response.data;
